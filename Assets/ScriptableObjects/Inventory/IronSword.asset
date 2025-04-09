@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e396242a515074bbcb5a317adb6ec230, type: 3}
+  m_Name: IronSword
+  m_EditorClassIdentifier: 
+  itemName: Iron Sword
+  itemDescription: A reliable shortsword
+  itemImage: {fileID: -5348082140701387576, guid: 6186f8d7a8551433aa4e929a446737e8, type: 3}
+  amount: 1
+  isUsable: 0
+  isUnique: 1
+  thisEvent:
+    m_PersistentCalls:
+      m_Calls: []
