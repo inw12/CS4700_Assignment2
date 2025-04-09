@@ -1,7 +1,5 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem.XR.Haptics;
 
 public enum PlayerState
 {
@@ -26,7 +24,7 @@ public class Player : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Application.targetFrameRate = 60;
+        //Application.targetFrameRate = 60;
         currentState = PlayerState.idle;
         animator = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
@@ -71,6 +69,19 @@ public class Player : MonoBehaviour
         }
     }
 
+    // > MOVEMENT
+    void MoveCharacter()
+    {
+        change.Normalize(); // keeps diagonal movement at same speed
+        transform.Translate(speed.value * Time.deltaTime * change);
+
+        /*
+        rigidBody.MovePosition(
+            transform.position + speed.value * Time.deltaTime * change    // applies transformation to player character
+        );
+        */
+    }
+
     // Enemy knockback onto the player
     public void Knock(float knockTime, float damage)
     {
@@ -83,15 +94,6 @@ public class Player : MonoBehaviour
             this.gameObject.SetActive(false);
         }
 
-    }
-
-    // > MOVEMENT
-    void MoveCharacter()
-    {
-        change.Normalize(); // keeps diagonal movement at same speed
-        rigidBody.MovePosition(
-            transform.position + speed.value * Time.deltaTime * change    // applies transformation to player character
-        );
     }
 
     // > ATTACK

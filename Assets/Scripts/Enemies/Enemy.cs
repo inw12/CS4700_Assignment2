@@ -1,8 +1,5 @@
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
-using System;
 using System.Collections;
-using System.Runtime.CompilerServices;
 
 public enum EnemyState
 {
